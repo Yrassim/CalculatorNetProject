@@ -23,8 +23,8 @@ public class BaseTest {
 
     @AfterMethod
     public void closeBrowser(){
-        driver.close();
-//        driver.quit();
+        //driver.close();
+        driver.quit();
     }
 
     public MainPage startingMainPage(){
