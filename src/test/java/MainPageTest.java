@@ -10,7 +10,8 @@ public class MainPageTest extends BaseTest{
     public void test1() {
         startingMainPage()      // instead calling the methode we can just write that: PageFactory.initElements(driver, MainPage.class);
                 .goToAgeCalculatorPage()
-                .selectAge();
+                .selectAge()
+                .checkAgeResult("420 months");
 
         try {
             Thread.sleep(5000);

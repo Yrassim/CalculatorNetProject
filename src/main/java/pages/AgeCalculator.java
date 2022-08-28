@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+import static org.testng.AssertJUnit.assertTrue;
+
 public class AgeCalculator {
 
     WebDriver driver;
@@ -27,6 +29,8 @@ public class AgeCalculator {
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[3]/table/tbody/tr[3]/td[2]/input")
     private WebElement submitButton;
+
+    @FindBy(css = "p[class='verybigtext']") private WebElement textToCheck;
 
     public AgeCalculator selectAge(){
 
@@ -49,6 +53,15 @@ public class AgeCalculator {
 //        month.selectByIndex(6);
 //        Select day = new Select(driver.findElement(By.cssSelector("Select[id='today_Day_ID']")));
 //        day.selectByVisibleText("17");
+        return this;
+    }
+
+    public AgeCalculator checkAgeResult(String text){
+
+        String actualString = textToCheck.getText();
+        //System.out.println(actualString); // this is to print the text to see if it works.
+        assertTrue(actualString.contains(text));
+
         return this;
     }
 

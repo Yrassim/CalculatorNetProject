@@ -21,11 +21,11 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-//    @AfterMethod
-//    public void closeBrowser(){
-//        driver.close();
-////        driver.quit();
-//    }
+    @AfterMethod
+    public void closeBrowser(){
+        driver.close();
+//        driver.quit();
+    }
 
     public MainPage startingMainPage(){
         return PageFactory.initElements(Browser.driver,MainPage.class);
